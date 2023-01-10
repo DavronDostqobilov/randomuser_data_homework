@@ -16,7 +16,10 @@ def get_gender_users(data:dict) -> list:
     results=data['results']
     list1=[]
     for i in results:
-        list1.append(i['gender'])
+        if i['gender']=='female':
+            list1.append({'Female':1})
+        if i['gender']=='male':
+            list1.append({'Male':1})
     return list1
 x=get_data.get_data('randomuser_data.json')
 print(get_gender_users(x))
