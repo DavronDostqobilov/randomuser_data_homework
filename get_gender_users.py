@@ -13,3 +13,10 @@ def get_gender_users(data:dict) -> list:
     Returns:
         list: users get gender list
     """
+    results=data['results']
+    list1=[]
+    for i in results:
+        list1.append(i['gender'])
+    return list1
+x=get_data.get_data('randomuser_data.json')
+print(get_gender_users(x))
